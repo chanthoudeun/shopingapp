@@ -1,4 +1,4 @@
-package com.chipmong.shopingapp
+package com.example.shopingapp
 
 import io.flutter.embedding.android.FlutterActivity
 
