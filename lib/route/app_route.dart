@@ -15,6 +15,8 @@ import 'package:mall/shop_detail/binding.dart';
 import 'package:mall/shop_detail/view.dart';
 import 'package:mall/shop_list/binding.dart';
 import 'package:mall/shop_list/view.dart';
+import 'package:mall/splash_screen/binding.dart';
+import 'package:mall/splash_screen/view.dart';
 
 class AppRoute {
   static const HOME = "/home_screen";
@@ -25,6 +27,7 @@ class AppRoute {
   static const SHOPLIST = "/shop_list";
   static const FAVORITESHOP = "/favorite_shop";
   static const REGISTER = "/register_screen";
+  static const Splash = "/splash_screen";
   static final pages = [
     GetPage(
       name: HOME,
@@ -52,6 +55,11 @@ class AppRoute {
       name: REGISTER,
       page: () => RegisterScreenPage(),
       binding: RegisterScreenBinding(),
+    ),
+    GetPage(
+      name: Splash,
+      page: () => SplashScreenPage(),
+      binding: SplashScreenBinding(),
     ),
   ];
 }

@@ -17,7 +17,7 @@ class LoginLogic extends GetxController {
   void onInit() {
     // TODO: implement onInit
     super.onInit();
-    checkAuth();
+    //checkAuth();
     // fetchProductById();
   }
 
@@ -45,6 +45,7 @@ class LoginLogic extends GetxController {
         update();
         print("Token: ${state.user.value.token}");
         print("Message: ${state.user.value.message}");
+        await userCache.setUser(state.user.value);
         Get.offNamed(AppRoute.HOME);
       }
     } on DioError catch (e) {
@@ -66,13 +67,5 @@ class LoginLogic extends GetxController {
       }
     }
   }
-  Future<void> checkAuth() async {
-    var user = await userCache.getUser();
-    if ((user?.token ?? "").isNotEmpty || user?.token != null) {
-      Get.offNamed(AppRoute.HOME);
-      // Get.offNamed(AppRoute.LOGIN);
-    } else {
-      Get.offNamed(AppRoute.LOGIN);
-    }
-  }
+
 }

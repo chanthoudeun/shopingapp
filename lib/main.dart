@@ -12,7 +12,7 @@ import 'package:mall/route/app_route.dart';
 Future<void> main() async {
   await Hive.initFlutter();
   Hive.registerAdapter(UserResponseImplAdapter());
-  await Hive.openBox('user_box');
+  await Hive.openBox('user_box1');
   Get.put(UserCache());
   runApp(const MyApp());
 }
@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       home: LoginPage(),
-      initialRoute: AppRoute.LOGIN,
+      initialRoute: AppRoute.Splash,
       getPages: AppRoute.pages,
     );
   }

@@ -16,7 +16,7 @@ class UserCache {
       return null;
     }
 
-    UserResponse? data = box.get("user_data");
+    UserResponse? data = box.get("user_box");
     if (data == null) {
       UserResponse defaultData = UserResponse();
       await setUser(defaultData);
@@ -29,8 +29,8 @@ class UserCache {
   Future<void> setUser(UserResponse user) async {
     Box box = await getBox();
     if (box.isOpen == false) {
-      return;
+      return null;
     }
-    box.put("user_data", user);
+    box.put("user_box", user);
   }
 }
