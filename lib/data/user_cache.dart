@@ -10,6 +10,7 @@ class UserCache {
     }
     return Hive.box<UserResponse>("user_box");
   }
+
   Future<UserResponse?> getUser() async {
     Box<UserResponse> box = await getBox();
     if (!box.isOpen) {

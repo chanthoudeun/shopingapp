@@ -47,12 +47,13 @@ class MallListPage extends StatelessWidget {
             SizedBox(
               height: 10,
             ),
+            Text("Length:${state.mallList.value.length}"),
             Expanded(
               child: ListView.builder(
                 physics: BouncingScrollPhysics(),
                 shrinkWrap: true,
                 scrollDirection: Axis.vertical,
-                itemCount: 3,
+                itemCount: state.mallList.value.length,
                 itemBuilder: (context, index) {
                   return Padding(
                     padding: const EdgeInsets.only(bottom: 10),

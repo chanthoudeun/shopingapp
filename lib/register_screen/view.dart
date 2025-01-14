@@ -70,7 +70,8 @@ class RegisterScreenPage extends StatelessWidget {
                         Container(
                           decoration: BoxDecoration(
                               color: Colors.white,
-                              borderRadius: BorderRadius.all(Radius.circular(10)),
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(10)),
                               boxShadow: [
                                 BoxShadow(
                                     color: Colors.black12,
@@ -116,7 +117,8 @@ class RegisterScreenPage extends StatelessWidget {
                         Container(
                           decoration: BoxDecoration(
                               color: Colors.white,
-                              borderRadius: BorderRadius.all(Radius.circular(10)),
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(10)),
                               boxShadow: [
                                 BoxShadow(
                                     color: Colors.black12,

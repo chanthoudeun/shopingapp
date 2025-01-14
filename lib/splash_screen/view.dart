@@ -22,20 +22,21 @@ class _SplashScreenPageState extends State<SplashScreenPage> {
   @override
   void initState() {
     super.initState();
-
-
   }
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(child: Container(
+    return SafeArea(
+        child: Container(
       height: double.infinity,
       width: double.infinity,
       color: Colors.white,
-      child:  Center(
-        child: Image.asset("assets/images/Chip_Mong_Malls_Logo.jpg",height: 250,),
+      child: Center(
+        child: Image.asset(
+          "assets/images/Chip_Mong_Malls_Logo.jpg",
+          height: 250,
+        ),
       ),
-
     ));
   }
 }

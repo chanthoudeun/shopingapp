@@ -78,7 +78,7 @@ class LoginPage extends StatelessWidget {
                         },
                       ),
                     ),
-            
+
                     Row(
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
@@ -210,7 +210,9 @@ class LoginPage extends StatelessWidget {
                     ),
                   ],
                 ),
-                SizedBox(height: 160,),
+                SizedBox(
+                  height: 160,
+                ),
                 //visit as a guest text button
                 Column(
                   // mainAxisAlignment: MainAxisAlignment.end,

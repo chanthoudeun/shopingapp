@@ -14,6 +14,7 @@ class SplashScreenLogic extends GetxController {
     checkAuth();
     // fetchProductById();
   }
+
   Future<void> checkAuth() async {
     var user = await userCache.getUser();
     await 10.delay();
@@ -25,5 +26,3 @@ class SplashScreenLogic extends GetxController {
     }
   }
 }
-
-
