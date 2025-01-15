@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:khmer_fonts/khmer_fonts.dart';
-import 'package:mall/model/user_response/user_response.dart';
+import 'package:mall/model/users_response/users_response.dart';
 import 'package:mall/route/app_route.dart';
 import 'package:dio/dio.dart';
 import 'logic.dart';

@@ -1,6 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:get/get.dart';
-import 'package:mall/model/user_response/user_response.dart';
+import 'package:mall/model/users_response/users_response.dart';
 import 'package:mall/route/app_route.dart';
 
 import 'state.dart';
@@ -25,7 +25,7 @@ class RegisterScreenLogic extends GetxController {
       );
 
       if (response.statusCode == 200) {
-        state.user.value = UserResponse.fromJson(response.data);
+        state.user.value = UsersResponse.fromJson(response.data);
         update();
         print("Register Success");
         print("Token: ${state.user.value.token}");

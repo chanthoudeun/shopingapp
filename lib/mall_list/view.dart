@@ -48,66 +48,68 @@ class MallListPage extends StatelessWidget {
               SizedBox(
                 height: 10,
               ),
-              Text("Length:${state.mallList.value.length}"),
               Expanded(
-                child: ListView.builder(
-                  physics: BouncingScrollPhysics(),
-                  shrinkWrap: true,
-                  scrollDirection: Axis.vertical,
-                  itemCount: state.mallList.value.length,
-                  itemBuilder: (context, index) {
-                    return Padding(
-                      padding: const EdgeInsets.only(bottom: 10),
-                      child: Container(
-                        decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.all(
-                              Radius.circular(10),
+                child: GetBuilder<MallListLogic>(builder: (logic) {
+                  return ListView.builder(
+                    physics: BouncingScrollPhysics(),
+                    shrinkWrap: true,
+                    scrollDirection: Axis.vertical,
+                    itemCount: state.mallList.value.length,
+                    itemBuilder: (context, index) {
+                      return Padding(
+                        padding: const EdgeInsets.only(bottom: 10),
+                        child: Container(
+                          decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.all(
+                                Radius.circular(10),
+                              ),
+                              boxShadow: [
+                                BoxShadow(
+                                    color: Colors.grey,
+                                    offset: Offset(0, 1),
+                                    blurRadius: 1)
+                              ]),
+                          child: ListTile(
+                            onTap: () {
+                              Get.toNamed(AppRoute.MALLDETAIL);
+                            },
+                            leading: Icon(
+                              Icons.location_on,
+                              color: Colors.pink.shade400,
+                              size: 27,
                             ),
-                            boxShadow: [
-                              BoxShadow(
-                                  color: Colors.grey,
-                                  offset: Offset(0, 1),
-                                  blurRadius: 1)
-                            ]),
-                        child: ListTile(
-                          onTap: () {
-                            Get.toNamed(AppRoute.MALLDETAIL);
-                          },
-                          leading: Icon(
-                            Icons.location_on,
-                            color: Colors.pink.shade400,
-                            size: 27,
-                          ),
-                          title: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                "Chip Mong 271 Mega Mall",
-                                style: TextStyle(
-                                    fontSize: 15, fontWeight: FontWeight.w600),
-                              ),
-                              Text(
-                                "HVRF+8W9, Oknha Mong Reththy St. (1928), Phnom Penh",
-                                maxLines: 1,
-                                overflow: TextOverflow.ellipsis,
-                                style: TextStyle(
-                                  color: Colors.grey,
-                                  fontSize: 12,
+                            title: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  "${state.mallList.value[index].mallName}",
+                                  style: TextStyle(
+                                      fontSize: 15,
+                                      fontWeight: FontWeight.w600),
                                 ),
-                              ),
-                            ],
-                          ),
-                          trailing: Icon(
-                            Icons.navigate_next,
-                            size: 25,
-                            color: Colors.black54,
+                                Text(
+                                  "${state.mallList.value[index].address}",
+                                  maxLines: 1,
+                                  overflow: TextOverflow.ellipsis,
+                                  style: TextStyle(
+                                    color: Colors.grey,
+                                    fontSize: 12,
+                                  ),
+                                ),
+                              ],
+                            ),
+                            trailing: Icon(
+                              Icons.navigate_next,
+                              size: 25,
+                              color: Colors.black54,
+                            ),
                           ),
                         ),
-                      ),
-                    );
-                  },
-                ),
+                      );
+                    },
+                  );
+                }),
               )
             ],
           ),

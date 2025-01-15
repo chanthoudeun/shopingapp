@@ -1,9 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
-import 'package:mall/model/user_response/user_response.dart';
+import 'package:mall/model/users_response/users_response.dart';
 
 class RegisterScreenState {
-  var user = UserResponse().obs;
+  var user = UsersResponse().obs;
   TextEditingController userController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
 }

@@ -26,6 +26,7 @@ class APIService {
           headers: {
             HttpHeaders.authorizationHeader: 'Bearer ${user?.token}',
           },
+          validateStatus: (status) => status! < 500,
         ),
       );
       switch (method) {

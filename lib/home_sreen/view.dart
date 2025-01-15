@@ -44,21 +44,24 @@ class HomeSreenPage extends StatelessWidget {
                         ),
                       ),
                     ),
-                    Text(
-                      "សួស្ដី,\n" + "Scorpita", // Username
-                      style: TextStyle(
-                          decoration: TextDecoration.none,
-                          fontSize: 16,
-                          color: Colors.white,
-                          fontWeight: FontWeight.w300,
-                          fontFamily: "TimeNewRoman"),
-                    ),
+                    Obx(() {
+                      return Text(
+                        "សួស្ដី,\n" + "${state.user.value.username}",
+                        // Username
+                        style: TextStyle(
+                            decoration: TextDecoration.none,
+                            fontSize: 16,
+                            color: Colors.white,
+                            fontWeight: FontWeight.w300,
+                            fontFamily: "TimeNewRoman"),
+                      );
+                    }),
                   ],
                 ),
                 IconButton(
                     onPressed: () {},
                     icon: Icon(
-                      Icons.menu,
+                      Icons.login_outlined,
                       color: Colors.white,
                     ))
               ],

@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
-import 'package:mall/model/mall_list_response/mall_list_response.dart';
+import 'package:mall/model/mall_response/mall_response.dart';
 
 class MallListState {
-  var mallList=<MallListResponse>[].obs;
+  var mallList = <MallResponse>[].obs;
 }
