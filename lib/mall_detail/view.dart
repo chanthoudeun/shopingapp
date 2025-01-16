@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:mall/mall_list/logic.dart';
 
 import 'logic.dart';
 import 'state.dart';
@@ -33,6 +34,7 @@ class MallDetailPage extends StatelessWidget {
                   fit: BoxFit.cover,
                   width: double.infinity,
                   image: NetworkImage(
+                    //"${Get.find<MallListLogic>().state.mallList.value[state.id.value].mallPicture}",
                     "https://www.chipmong.com/wp-content/uploads/portfolio/retail/Mega-Mall-271/5.jpg",
                   ),
                   height: 150,
@@ -45,7 +47,8 @@ class MallDetailPage extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          "Chip Mong 271 Mega Mall",
+                          "${state.id.value}",
+                          //"${Get.find<MallListLogic>().state.mallList.value[state.id.value]?.mallName ?? 'Unknown Mall'}",
                           style: TextStyle(
                               fontSize: 17, fontWeight: FontWeight.w600),
                         ),

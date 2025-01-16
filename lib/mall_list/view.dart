@@ -72,7 +72,9 @@ class MallListPage extends StatelessWidget {
                               ]),
                           child: ListTile(
                             onTap: () {
-                              Get.toNamed(AppRoute.MALLDETAIL);
+                              Get.toNamed(AppRoute.MALLDETAIL, arguments: {
+                                "id": state.mallList.value[index].id
+                              });
                             },
                             leading: Icon(
                               Icons.location_on,

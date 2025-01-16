@@ -39,7 +39,7 @@ class LoginPage extends StatelessWidget {
                       children: [
                         TextButton(
                           onPressed: () {
-                            Get.toNamed(AppRoute.REGISTER);
+                            Get.offAllNamed(AppRoute.REGISTER);
                           },
                           child: Text(
                             "Register",

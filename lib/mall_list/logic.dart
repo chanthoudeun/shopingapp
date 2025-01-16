@@ -1,7 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:get/get.dart';
 import 'package:mall/data/user_cache.dart';
-import 'package:mall/model/mall_response/mall_response.dart';
+import 'package:mall/model/mall_list_response/mall_list_response.dart';
 
 import '../data/api_service.dart';
 import 'state.dart';
@@ -30,7 +30,7 @@ class MallListLogic extends GetxController {
         final List<dynamic> mallData = response.data;
 
         state.mallList.value =
-            mallData.map((json) => MallResponse.fromJson(json)).toList();
+            mallData.map((json) => MallListResponse.fromJson(json)).toList();
 
         print("success\n");
         update();

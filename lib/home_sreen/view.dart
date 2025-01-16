@@ -59,7 +59,76 @@ class HomeSreenPage extends StatelessWidget {
                   ],
                 ),
                 IconButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      showDialog<String>(
+                          context: context,
+                          builder: (BuildContext context) => AlertDialog(
+                                title: const Text(
+                                  'LogOut',
+                                  style: TextStyle(
+                                      fontSize: 17,
+                                      fontWeight: FontWeight.w600),
+                                ),
+                                content: const Text(
+                                  'Are you sure to LogOut?',
+                                  textAlign: TextAlign.center,
+                                ),
+                                actions: <Widget>[
+                                  Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceEvenly,
+                                    children: [
+                                      GestureDetector(
+                                        onTap: () {
+                                          Navigator.pop(context, 'No');
+                                        },
+                                        child: Container(
+                                          height: 40,
+                                          width: 80,
+                                          padding: EdgeInsets.only(top: 8),
+                                          decoration: BoxDecoration(
+                                            borderRadius: BorderRadius.all(
+                                                Radius.circular(10)),
+                                            border: Border.all(
+                                                color: Colors.pink, width: 1),
+                                          ),
+                                          child: Text(
+                                            'No',
+                                            textAlign: TextAlign.center,
+                                            style: TextStyle(
+                                                color: Colors.pink,
+                                                fontWeight: FontWeight.w500),
+                                          ),
+                                        ),
+                                      ),
+                                      GestureDetector(
+                                        onTap: () {
+                                          logic.signOut();
+                                        },
+                                        child: Container(
+                                          height: 40,
+                                          width: 80,
+                                          padding: EdgeInsets.only(top: 8),
+                                          decoration: BoxDecoration(
+                                            borderRadius: BorderRadius.all(
+                                                Radius.circular(10)),
+                                            border: Border.all(
+                                                color: Colors.pink, width: 1),
+                                          ),
+                                          child: Text(
+                                            'Yes',
+                                            textAlign: TextAlign.center,
+                                            style: TextStyle(
+                                                color: Colors.pink,
+                                                fontWeight: FontWeight.w500),
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ],
+                              ));
+                    },
                     icon: Icon(
                       Icons.login_outlined,
                       color: Colors.white,

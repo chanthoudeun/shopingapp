@@ -1,5 +1,6 @@
+import 'package:get/get.dart';
+import 'package:get/get_common/get_reset.dart';
+
 class MallDetailState {
-  MallDetailState() {
-    ///Initialize variables
-  }
+  var id = 0.obs;
 }
