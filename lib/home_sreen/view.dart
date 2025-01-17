@@ -4,9 +4,14 @@ import 'package:mall/home_sreen/logic.dart';
 import 'package:mall/home_sreen/state.dart';
 import 'package:mall/route/app_route.dart';
 
-class HomeSreenPage extends StatelessWidget {
+class HomeSreenPage extends StatefulWidget {
   HomeSreenPage({Key? key}) : super(key: key);
 
+  @override
+  State<HomeSreenPage> createState() => _HomeSreenPageState();
+}
+
+class _HomeSreenPageState extends State<HomeSreenPage> {
   final HomeSreenLogic logic = Get.put(HomeSreenLogic());
   final HomeSreenState state = Get.find<HomeSreenLogic>().state;
 

@@ -7,6 +7,5 @@ class MallDetailBinding extends Bindings {
   @override
   void dependencies() {
     Get.lazyPut(() => MallDetailLogic());
-    Get.lazyPut(() => MallListLogic());
   }
 }

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:mall/mall_list/logic.dart';
+import 'package:mall/model/mall_list_response/mall_list_response.dart';
 
 import 'logic.dart';
 import 'state.dart';
@@ -39,19 +40,21 @@ class MallDetailPage extends StatelessWidget {
                   ),
                   height: 150,
                 ),
-                Expanded(
-                  child: Container(
+                Expanded(child: GetBuilder<MallDetailLogic>(builder: (logic) {
+                  return Container(
                     padding: EdgeInsets.all(10),
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(
-                          "${state.id.value}",
-                          //"${Get.find<MallListLogic>().state.mallList.value[state.id.value]?.mallName ?? 'Unknown Mall'}",
-                          style: TextStyle(
-                              fontSize: 17, fontWeight: FontWeight.w600),
-                        ),
+                        Obx(() {
+                          return Text(
+                            "${state.mallDetail.value.name}",
+                            // "${Get.find<MallListLogic>().state.mallList.value[state.id.value]?.mallName ?? 'Unknown Mall'}",
+                            style: TextStyle(
+                                fontSize: 17, fontWeight: FontWeight.w600),
+                          );
+                        }),
                         Row(
                           children: [
                             Icon(
@@ -62,13 +65,16 @@ class MallDetailPage extends StatelessWidget {
                               width: 5,
                             ),
                             Expanded(
-                              child: Text(
-                                "HVRF+8W9, Oknha Mong Reththy St. (1928), Phnom Penh",
-                                style: TextStyle(
-                                    fontSize: 14,
-                                    fontWeight: FontWeight.w500,
-                                    color: Colors.black54),
-                              ),
+                              child: Obx(() {
+                                return Text(
+                                  "${state.mallDetail.value.address}",
+                                  //"HVRF+8W9, Oknha Mong Reththy St. (1928), Phnom Penh",
+                                  style: TextStyle(
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.w500,
+                                      color: Colors.black54),
+                                );
+                              }),
                             ),
                           ],
                         ),
@@ -95,13 +101,15 @@ class MallDetailPage extends StatelessWidget {
                               width: 5,
                             ),
                             Expanded(
-                              child: Text(
-                                "9:00 AM – 10:00PM",
-                                style: TextStyle(
-                                    fontWeight: FontWeight.w500,
-                                    fontSize: 14,
-                                    color: Colors.black54),
-                              ),
+                              child: Obx(() {
+                                return Text(
+                                  "${state.mallDetail.value.time}",
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.w500,
+                                      fontSize: 14,
+                                      color: Colors.black54),
+                                );
+                              }),
                             )
                           ],
                         ),
@@ -115,20 +123,22 @@ class MallDetailPage extends StatelessWidget {
                               width: 5,
                             ),
                             Expanded(
-                              child: Text(
-                                "(+855) 69 999 279",
-                                style: TextStyle(
-                                    fontWeight: FontWeight.w500,
-                                    fontSize: 14,
-                                    color: Colors.black54),
-                              ),
+                              child: Obx(() {
+                                return Text(
+                                  "${state.mallDetail.value.phoneNumber}",
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.w500,
+                                      fontSize: 14,
+                                      color: Colors.black54),
+                                );
+                              }),
                             )
                           ],
                         ),
                       ],
                     ),
-                  ),
-                ),
+                  );
+                }))
               ],
             ),
           ),
