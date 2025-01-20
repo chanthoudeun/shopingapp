@@ -86,7 +86,23 @@ class ShopListPage extends StatelessWidget {
             ),
             Expanded(
               //call CardShop reusable widget
-              child: CardShop(),
+              child: GetBuilder<ShopListLogic>(builder: (logic) {
+                return ListView.builder(
+                  physics: BouncingScrollPhysics(),
+                  scrollDirection: Axis.vertical,
+                  shrinkWrap: true,
+                  itemCount: 6,
+                  itemBuilder: (context, index) {
+                    return GestureDetector(
+                        onTap: () {
+                          Get.toNamed(AppRoute.SHOPDETAIL, arguments: {
+                            "id": state.shopList.value[index].id
+                          });
+                        },
+                        child: CardShop());
+                  },
+                );
+              }),
             )
           ],
         ),

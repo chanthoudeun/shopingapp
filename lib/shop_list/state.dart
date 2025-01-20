@@ -1,5 +1,6 @@
+import 'package:get/get.dart';
+import 'package:mall/model/shop_response/shop_response.dart';
+
 class ShopListState {
-  ShopListState() {
-    ///Initialize variables
-  }
+  var shopList = <ShopResponse>[].obs;
 }
