@@ -11,6 +11,7 @@ class ShopResponse with _$ShopResponse {
     String? shopName,
     int? mallId,
     String? category,
+    String? mallName,
     String? floor,
     String? imageUrl,
     bool? offerAvailable,

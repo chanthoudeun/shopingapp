@@ -36,7 +36,17 @@ class FavoriteShopPage extends StatelessWidget {
               height: 10,
             ),
             Expanded(
-              child: CardShop(),
+              child: GetBuilder<FavoriteShopLogic>(builder: (logic) {
+                return ListView.builder(
+                  itemCount: 4,
+                  itemBuilder: (BuildContext context, int index) {
+                    CardShop(
+                      isNewArrival: true,
+                      isOfferAvailable: true,
+                    );
+                  },
+                );
+              }),
             )
           ],
         ),

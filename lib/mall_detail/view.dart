@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:mall/mall_list/logic.dart';
 import 'package:mall/model/mall_list_response/mall_list_response.dart';
 
 import 'logic.dart';

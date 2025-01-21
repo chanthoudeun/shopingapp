@@ -24,7 +24,11 @@ class HomeSreenLogic extends GetxController {
 
   void signOut() async {
     try {
+      state.isLoading.value = true;
       await Hive.deleteFromDisk();
+      await 10.delay();
+      state.isLoading.value = false;
+      Get.back();
       Get.offAllNamed(AppRoute.LOGIN);
     } catch (e) {}
   }

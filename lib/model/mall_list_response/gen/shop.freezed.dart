@@ -28,6 +28,8 @@ mixin _$Shop {
   set mallId(int? value) => throw _privateConstructorUsedError;
   String? get category => throw _privateConstructorUsedError;
   set category(String? value) => throw _privateConstructorUsedError;
+  dynamic get mallName => throw _privateConstructorUsedError;
+  set mallName(dynamic value) => throw _privateConstructorUsedError;
   String? get floor => throw _privateConstructorUsedError;
   set floor(String? value) => throw _privateConstructorUsedError;
   String? get imageUrl => throw _privateConstructorUsedError;
@@ -36,6 +38,14 @@ mixin _$Shop {
   set offerAvailable(bool? value) => throw _privateConstructorUsedError;
   bool? get newArrival => throw _privateConstructorUsedError;
   set newArrival(bool? value) => throw _privateConstructorUsedError;
+  String? get description => throw _privateConstructorUsedError;
+  set description(String? value) => throw _privateConstructorUsedError;
+  String? get membershipBenefit => throw _privateConstructorUsedError;
+  set membershipBenefit(String? value) => throw _privateConstructorUsedError;
+  String? get shopOffer => throw _privateConstructorUsedError;
+  set shopOffer(String? value) => throw _privateConstructorUsedError;
+  String? get profilePicture => throw _privateConstructorUsedError;
+  set profilePicture(String? value) => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -52,10 +62,15 @@ abstract class $ShopCopyWith<$Res> {
       String? shopName,
       int? mallId,
       String? category,
+      dynamic mallName,
       String? floor,
       String? imageUrl,
       bool? offerAvailable,
-      bool? newArrival});
+      bool? newArrival,
+      String? description,
+      String? membershipBenefit,
+      String? shopOffer,
+      String? profilePicture});
 }
 
 /// @nodoc
@@ -75,10 +90,15 @@ class _$ShopCopyWithImpl<$Res, $Val extends Shop>
     Object? shopName = freezed,
     Object? mallId = freezed,
     Object? category = freezed,
+    Object? mallName = freezed,
     Object? floor = freezed,
     Object? imageUrl = freezed,
     Object? offerAvailable = freezed,
     Object? newArrival = freezed,
+    Object? description = freezed,
+    Object? membershipBenefit = freezed,
+    Object? shopOffer = freezed,
+    Object? profilePicture = freezed,
   }) {
     return _then(_value.copyWith(
       id: freezed == id
@@ -97,6 +117,10 @@ class _$ShopCopyWithImpl<$Res, $Val extends Shop>
           ? _value.category
           : category // ignore: cast_nullable_to_non_nullable
               as String?,
+      mallName: freezed == mallName
+          ? _value.mallName
+          : mallName // ignore: cast_nullable_to_non_nullable
+              as dynamic,
       floor: freezed == floor
           ? _value.floor
           : floor // ignore: cast_nullable_to_non_nullable
@@ -113,6 +137,22 @@ class _$ShopCopyWithImpl<$Res, $Val extends Shop>
           ? _value.newArrival
           : newArrival // ignore: cast_nullable_to_non_nullable
               as bool?,
+      description: freezed == description
+          ? _value.description
+          : description // ignore: cast_nullable_to_non_nullable
+              as String?,
+      membershipBenefit: freezed == membershipBenefit
+          ? _value.membershipBenefit
+          : membershipBenefit // ignore: cast_nullable_to_non_nullable
+              as String?,
+      shopOffer: freezed == shopOffer
+          ? _value.shopOffer
+          : shopOffer // ignore: cast_nullable_to_non_nullable
+              as String?,
+      profilePicture: freezed == profilePicture
+          ? _value.profilePicture
+          : profilePicture // ignore: cast_nullable_to_non_nullable
+              as String?,
     ) as $Val);
   }
 }
@@ -129,10 +169,15 @@ abstract class _$$ShopImplCopyWith<$Res> implements $ShopCopyWith<$Res> {
       String? shopName,
       int? mallId,
       String? category,
+      dynamic mallName,
       String? floor,
       String? imageUrl,
       bool? offerAvailable,
-      bool? newArrival});
+      bool? newArrival,
+      String? description,
+      String? membershipBenefit,
+      String? shopOffer,
+      String? profilePicture});
 }
 
 /// @nodoc
@@ -149,10 +194,15 @@ class __$$ShopImplCopyWithImpl<$Res>
     Object? shopName = freezed,
     Object? mallId = freezed,
     Object? category = freezed,
+    Object? mallName = freezed,
     Object? floor = freezed,
     Object? imageUrl = freezed,
     Object? offerAvailable = freezed,
     Object? newArrival = freezed,
+    Object? description = freezed,
+    Object? membershipBenefit = freezed,
+    Object? shopOffer = freezed,
+    Object? profilePicture = freezed,
   }) {
     return _then(_$ShopImpl(
       id: freezed == id
@@ -171,6 +221,10 @@ class __$$ShopImplCopyWithImpl<$Res>
           ? _value.category
           : category // ignore: cast_nullable_to_non_nullable
               as String?,
+      mallName: freezed == mallName
+          ? _value.mallName
+          : mallName // ignore: cast_nullable_to_non_nullable
+              as dynamic,
       floor: freezed == floor
           ? _value.floor
           : floor // ignore: cast_nullable_to_non_nullable
@@ -187,6 +241,22 @@ class __$$ShopImplCopyWithImpl<$Res>
           ? _value.newArrival
           : newArrival // ignore: cast_nullable_to_non_nullable
               as bool?,
+      description: freezed == description
+          ? _value.description
+          : description // ignore: cast_nullable_to_non_nullable
+              as String?,
+      membershipBenefit: freezed == membershipBenefit
+          ? _value.membershipBenefit
+          : membershipBenefit // ignore: cast_nullable_to_non_nullable
+              as String?,
+      shopOffer: freezed == shopOffer
+          ? _value.shopOffer
+          : shopOffer // ignore: cast_nullable_to_non_nullable
+              as String?,
+      profilePicture: freezed == profilePicture
+          ? _value.profilePicture
+          : profilePicture // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -200,10 +270,15 @@ class _$ShopImpl implements _Shop {
       this.shopName,
       this.mallId,
       this.category,
+      this.mallName,
       this.floor,
       this.imageUrl,
       this.offerAvailable,
-      this.newArrival});
+      this.newArrival,
+      this.description,
+      this.membershipBenefit,
+      this.shopOffer,
+      this.profilePicture});
 
   factory _$ShopImpl.fromJson(Map<String, dynamic> json) =>
       _$$ShopImplFromJson(json);
@@ -217,6 +292,8 @@ class _$ShopImpl implements _Shop {
   @override
   String? category;
   @override
+  dynamic mallName;
+  @override
   String? floor;
   @override
   String? imageUrl;
@@ -224,10 +301,18 @@ class _$ShopImpl implements _Shop {
   bool? offerAvailable;
   @override
   bool? newArrival;
+  @override
+  String? description;
+  @override
+  String? membershipBenefit;
+  @override
+  String? shopOffer;
+  @override
+  String? profilePicture;
 
   @override
   String toString() {
-    return 'Shop(id: $id, shopName: $shopName, mallId: $mallId, category: $category, floor: $floor, imageUrl: $imageUrl, offerAvailable: $offerAvailable, newArrival: $newArrival)';
+    return 'Shop(id: $id, shopName: $shopName, mallId: $mallId, category: $category, mallName: $mallName, floor: $floor, imageUrl: $imageUrl, offerAvailable: $offerAvailable, newArrival: $newArrival, description: $description, membershipBenefit: $membershipBenefit, shopOffer: $shopOffer, profilePicture: $profilePicture)';
   }
 
   @JsonKey(ignore: true)
@@ -250,10 +335,15 @@ abstract class _Shop implements Shop {
       String? shopName,
       int? mallId,
       String? category,
+      dynamic mallName,
       String? floor,
       String? imageUrl,
       bool? offerAvailable,
-      bool? newArrival}) = _$ShopImpl;
+      bool? newArrival,
+      String? description,
+      String? membershipBenefit,
+      String? shopOffer,
+      String? profilePicture}) = _$ShopImpl;
 
   factory _Shop.fromJson(Map<String, dynamic> json) = _$ShopImpl.fromJson;
 
@@ -270,6 +360,9 @@ abstract class _Shop implements Shop {
   String? get category;
   set category(String? value);
   @override
+  dynamic get mallName;
+  set mallName(dynamic value);
+  @override
   String? get floor;
   set floor(String? value);
   @override
@@ -281,6 +374,18 @@ abstract class _Shop implements Shop {
   @override
   bool? get newArrival;
   set newArrival(bool? value);
+  @override
+  String? get description;
+  set description(String? value);
+  @override
+  String? get membershipBenefit;
+  set membershipBenefit(String? value);
+  @override
+  String? get shopOffer;
+  set shopOffer(String? value);
+  @override
+  String? get profilePicture;
+  set profilePicture(String? value);
   @override
   @JsonKey(ignore: true)
   _$$ShopImplCopyWith<_$ShopImpl> get copyWith =>

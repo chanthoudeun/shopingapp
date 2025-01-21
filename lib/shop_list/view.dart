@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:mall/mall_list/logic.dart';
 import 'package:mall/route/app_route.dart';
+import 'package:mall/shop_detail/logic.dart';
 import 'package:mall/shop_list/Widget/card_category.dart';
 import 'package:mall/shop_list/Widget/card_shop.dart';
 
@@ -91,15 +93,25 @@ class ShopListPage extends StatelessWidget {
                   physics: BouncingScrollPhysics(),
                   scrollDirection: Axis.vertical,
                   shrinkWrap: true,
-                  itemCount: 6,
+                  itemCount: state.shopList.value.length,
                   itemBuilder: (context, index) {
                     return GestureDetector(
                         onTap: () {
                           Get.toNamed(AppRoute.SHOPDETAIL, arguments: {
-                            "id": state.shopList.value[index].id
+                            "id": state.shopList.value[index].id,
                           });
                         },
-                        child: CardShop());
+                        child: CardShop(
+                          name: state.shopList.value[index].shopName,
+                          category: state.shopList.value[index].category,
+                          floor: state.shopList.value[index].floor,
+                          address: state.shopList.value[index].mallName,
+                          isOfferAvailable:
+                              state.shopList.value[index].offerAvailable ??
+                                  false,
+                          isNewArrival:
+                              state.shopList.value[index].newArrival ?? false,
+                        ));
                   },
                 );
               }),

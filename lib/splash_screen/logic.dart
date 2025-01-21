@@ -7,6 +7,7 @@ import 'state.dart';
 class SplashScreenLogic extends GetxController {
   final SplashScreenState state = SplashScreenState();
   var userCache = Get.find<UserCache>();
+
   @override
   void onInit() {
     // TODO: implement onInit
@@ -19,10 +20,10 @@ class SplashScreenLogic extends GetxController {
     var user = await userCache.getUser();
     await 10.delay();
     if ((user?.token ?? "").isNotEmpty || user?.token != null) {
-      Get.offNamed(AppRoute.HOME);
+      Get.offAllNamed(AppRoute.HOME);
       // Get.offNamed(AppRoute.LOGIN);
     } else {
-      Get.offNamed(AppRoute.LOGIN);
+      Get.offAllNamed(AppRoute.LOGIN);
     }
   }
 }

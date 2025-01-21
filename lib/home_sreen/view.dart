@@ -106,29 +106,39 @@ class _HomeSreenPageState extends State<HomeSreenPage> {
                                           ),
                                         ),
                                       ),
-                                      GestureDetector(
-                                        onTap: () {
-                                          logic.signOut();
-                                        },
-                                        child: Container(
-                                          height: 40,
-                                          width: 80,
-                                          padding: EdgeInsets.only(top: 8),
-                                          decoration: BoxDecoration(
-                                            borderRadius: BorderRadius.all(
-                                                Radius.circular(10)),
-                                            border: Border.all(
-                                                color: Colors.pink, width: 1),
-                                          ),
-                                          child: Text(
-                                            'Yes',
-                                            textAlign: TextAlign.center,
-                                            style: TextStyle(
-                                                color: Colors.pink,
-                                                fontWeight: FontWeight.w500),
-                                          ),
-                                        ),
-                                      ),
+                                      Obx(() {
+                                        return GestureDetector(
+                                          onTap: () async {
+                                            logic.signOut();
+                                          },
+                                          child: logic.state.isLoading.value ==
+                                                  true
+                                              ? CircularProgressIndicator()
+                                              : Container(
+                                                  height: 40,
+                                                  width: 80,
+                                                  padding:
+                                                      EdgeInsets.only(top: 8),
+                                                  decoration: BoxDecoration(
+                                                    borderRadius:
+                                                        BorderRadius.all(
+                                                            Radius.circular(
+                                                                10)),
+                                                    border: Border.all(
+                                                        color: Colors.pink,
+                                                        width: 1),
+                                                  ),
+                                                  child: Text(
+                                                    'Yes',
+                                                    textAlign: TextAlign.center,
+                                                    style: TextStyle(
+                                                        color: Colors.pink,
+                                                        fontWeight:
+                                                            FontWeight.w500),
+                                                  ),
+                                                ),
+                                        );
+                                      }),
                                     ],
                                   ),
                                 ],

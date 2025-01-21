@@ -28,6 +28,8 @@ mixin _$ShopResponse {
   set mallId(int? value) => throw _privateConstructorUsedError;
   String? get category => throw _privateConstructorUsedError;
   set category(String? value) => throw _privateConstructorUsedError;
+  String? get mallName => throw _privateConstructorUsedError;
+  set mallName(String? value) => throw _privateConstructorUsedError;
   String? get floor => throw _privateConstructorUsedError;
   set floor(String? value) => throw _privateConstructorUsedError;
   String? get imageUrl => throw _privateConstructorUsedError;
@@ -62,6 +64,7 @@ abstract class $ShopResponseCopyWith<$Res> {
       String? shopName,
       int? mallId,
       String? category,
+      String? mallName,
       String? floor,
       String? imageUrl,
       bool? offerAvailable,
@@ -89,6 +92,7 @@ class _$ShopResponseCopyWithImpl<$Res, $Val extends ShopResponse>
     Object? shopName = freezed,
     Object? mallId = freezed,
     Object? category = freezed,
+    Object? mallName = freezed,
     Object? floor = freezed,
     Object? imageUrl = freezed,
     Object? offerAvailable = freezed,
@@ -114,6 +118,10 @@ class _$ShopResponseCopyWithImpl<$Res, $Val extends ShopResponse>
       category: freezed == category
           ? _value.category
           : category // ignore: cast_nullable_to_non_nullable
+              as String?,
+      mallName: freezed == mallName
+          ? _value.mallName
+          : mallName // ignore: cast_nullable_to_non_nullable
               as String?,
       floor: freezed == floor
           ? _value.floor
@@ -164,6 +172,7 @@ abstract class _$$ShopResponseImplCopyWith<$Res>
       String? shopName,
       int? mallId,
       String? category,
+      String? mallName,
       String? floor,
       String? imageUrl,
       bool? offerAvailable,
@@ -189,6 +198,7 @@ class __$$ShopResponseImplCopyWithImpl<$Res>
     Object? shopName = freezed,
     Object? mallId = freezed,
     Object? category = freezed,
+    Object? mallName = freezed,
     Object? floor = freezed,
     Object? imageUrl = freezed,
     Object? offerAvailable = freezed,
@@ -214,6 +224,10 @@ class __$$ShopResponseImplCopyWithImpl<$Res>
       category: freezed == category
           ? _value.category
           : category // ignore: cast_nullable_to_non_nullable
+              as String?,
+      mallName: freezed == mallName
+          ? _value.mallName
+          : mallName // ignore: cast_nullable_to_non_nullable
               as String?,
       floor: freezed == floor
           ? _value.floor
@@ -260,6 +274,7 @@ class _$ShopResponseImpl implements _ShopResponse {
       this.shopName,
       this.mallId,
       this.category,
+      this.mallName,
       this.floor,
       this.imageUrl,
       this.offerAvailable,
@@ -281,6 +296,8 @@ class _$ShopResponseImpl implements _ShopResponse {
   @override
   String? category;
   @override
+  String? mallName;
+  @override
   String? floor;
   @override
   String? imageUrl;
@@ -299,7 +316,7 @@ class _$ShopResponseImpl implements _ShopResponse {
 
   @override
   String toString() {
-    return 'ShopResponse(id: $id, shopName: $shopName, mallId: $mallId, category: $category, floor: $floor, imageUrl: $imageUrl, offerAvailable: $offerAvailable, newArrival: $newArrival, description: $description, membershipBenefit: $membershipBenefit, shopOffer: $shopOffer, profilePicture: $profilePicture)';
+    return 'ShopResponse(id: $id, shopName: $shopName, mallId: $mallId, category: $category, mallName: $mallName, floor: $floor, imageUrl: $imageUrl, offerAvailable: $offerAvailable, newArrival: $newArrival, description: $description, membershipBenefit: $membershipBenefit, shopOffer: $shopOffer, profilePicture: $profilePicture)';
   }
 
   @JsonKey(ignore: true)
@@ -322,6 +339,7 @@ abstract class _ShopResponse implements ShopResponse {
       String? shopName,
       int? mallId,
       String? category,
+      String? mallName,
       String? floor,
       String? imageUrl,
       bool? offerAvailable,
@@ -346,6 +364,9 @@ abstract class _ShopResponse implements ShopResponse {
   @override
   String? get category;
   set category(String? value);
+  @override
+  String? get mallName;
+  set mallName(String? value);
   @override
   String? get floor;
   set floor(String? value);
