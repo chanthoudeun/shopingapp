@@ -66,7 +66,7 @@ class MallDetailPage extends StatelessWidget {
                             Expanded(
                               child: Obx(() {
                                 return Text(
-                                  "${state.mallDetail.value.address}",
+                                  "${state.mallDetail.value.address},${state.mallDetail.value.city}",
                                   //"HVRF+8W9, Oknha Mong Reththy St. (1928), Phnom Penh",
                                   style: TextStyle(
                                       fontSize: 14,

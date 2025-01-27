@@ -44,6 +44,15 @@ class LoginLogic extends GetxController {
         print("User:${state.user.value.username}");
         await userCache.setUser(state.user.value);
         Get.offNamed(AppRoute.HOME);
+      } else {
+        Get.snackbar(
+          "Error",
+          "Invalid User",
+          snackPosition: SnackPosition.TOP,
+          backgroundColor: Colors.orange,
+          colorText: Colors.white,
+          duration: Duration(seconds: 3),
+        );
       }
     } on DioError catch (e) {
       // Handle Dio errors such as network failure or status code error

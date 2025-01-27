@@ -20,7 +20,7 @@ class RegisterScreenPage extends StatelessWidget {
         backgroundColor: Colors.white,
         leading: IconButton(
           onPressed: () {
-            Get.back();
+            Get.offNamed(AppRoute.LOGIN);
           },
           icon: Icon(
             Icons.arrow_back_ios_new,

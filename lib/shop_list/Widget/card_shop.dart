@@ -144,42 +144,52 @@ class _CardShopState extends State<CardShop> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
-                          if (widget.isOfferAvailable)
-                            Container(
-                              height: 30,
-                              width: 100,
-                              padding: EdgeInsets.only(top: 5),
-                              decoration: BoxDecoration(
-                                  color: Colors.pink.withOpacity(0.1),
-                                  borderRadius:
-                                      BorderRadius.all(Radius.circular(10))),
-                              child: Text(
-                                "Offer Available",
-                                textAlign: TextAlign.center,
-                                style: TextStyle(
-                                    fontSize: 12,
-                                    fontWeight: FontWeight.w500,
-                                    color: Colors.pink),
-                              ),
-                            ),
-                          if (widget.isNewArrival)
-                            Container(
-                              height: 30,
-                              width: 100,
-                              padding: EdgeInsets.only(top: 5),
-                              decoration: BoxDecoration(
-                                  color: Colors.pink.withOpacity(0.1),
-                                  borderRadius:
-                                      BorderRadius.all(Radius.circular(10))),
-                              child: Text(
-                                "New Arrival",
-                                textAlign: TextAlign.center,
-                                style: TextStyle(
-                                    fontSize: 12,
-                                    fontWeight: FontWeight.w500,
-                                    color: Colors.pink),
-                              ),
-                            ),
+                          widget.isOfferAvailable == true
+                              ? Container(
+                                  height: 30,
+                                  width: 100,
+                                  padding: EdgeInsets.only(top: 5),
+                                  decoration: BoxDecoration(
+                                      color: Colors.pink.withOpacity(0.1),
+                                      borderRadius: BorderRadius.all(
+                                          Radius.circular(10))),
+                                  child: Text(
+                                    "Offer Available",
+                                    textAlign: TextAlign.center,
+                                    style: TextStyle(
+                                        fontSize: 12,
+                                        fontWeight: FontWeight.w500,
+                                        color: Colors.pink),
+                                  ),
+                                )
+                              : Container(
+                                  height: 30,
+                                  width: 100,
+                                  color: Colors.white,
+                                ),
+                          widget.isNewArrival == true
+                              ? Container(
+                                  height: 30,
+                                  width: 100,
+                                  padding: EdgeInsets.only(top: 5),
+                                  decoration: BoxDecoration(
+                                      color: Colors.pink.withOpacity(0.1),
+                                      borderRadius: BorderRadius.all(
+                                          Radius.circular(10))),
+                                  child: Text(
+                                    "New Arrival",
+                                    textAlign: TextAlign.center,
+                                    style: TextStyle(
+                                        fontSize: 12,
+                                        fontWeight: FontWeight.w500,
+                                        color: Colors.pink),
+                                  ),
+                                )
+                              : Container(
+                                  height: 30,
+                                  width: 100,
+                                  color: Colors.white,
+                                )
                         ],
                       )
                     ])),

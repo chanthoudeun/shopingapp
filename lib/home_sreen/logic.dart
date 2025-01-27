@@ -26,7 +26,7 @@ class HomeSreenLogic extends GetxController {
     try {
       state.isLoading.value = true;
       await Hive.deleteFromDisk();
-      await 10.delay();
+      await 5.delay();
       state.isLoading.value = false;
       Get.back();
       Get.offAllNamed(AppRoute.LOGIN);

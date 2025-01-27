@@ -1,5 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:get/get.dart';
+import 'package:mall/data/user_cache.dart';
 import 'package:mall/model/users_response/users_response.dart';
 import 'package:mall/route/app_route.dart';
 
@@ -7,6 +8,14 @@ import 'state.dart';
 
 class RegisterScreenLogic extends GetxController {
   final RegisterScreenState state = RegisterScreenState();
+  var userCache = Get.find<UserCache>();
+
+  @override
+  void onInit() {
+    // TODO: implement onInit
+    super.onInit();
+  }
+
   Future<void> register() async {
     Dio dio = Dio();
     final data = {
@@ -30,7 +39,8 @@ class RegisterScreenLogic extends GetxController {
         print("Register Success");
         print("Token: ${state.user.value.token}");
         print("Message: ${state.user.value.message}");
-        Get.offNamed(AppRoute.LOGIN);
+        await userCache.setUser(state.user.value);
+        Get.offNamed(AppRoute.HOME);
       } else {
         print("Register not success");
       }
